@@ -1,0 +1,83 @@
+
+{
+  "condos": [
+    {
+      "id": 1,
+      "date": "2017-11-15",
+      "title": "Dębowe Tarasy Johna Baildona z Ogródkiem, Taras, Katowice, Dąb, Dębowe Tarasy",
+      "location": "Katowice",
+      "surface": 75.00,
+      "price": 579000,
+      "price/m2": 7739,
+      "rooms": 3,
+      "link": "https://www.otodom.pl",
+      "tel": "509 758 003",
+      "category": "na sprzedaż"
+    },
+    {
+      "id": 2,
+      "date": "2017-11-15",
+      "title": "Mieszkania Katowice Wełnowiec-Józefowiec 42.13m2 sprzedaż - apartamentowiec",
+      "location": "Katowice",
+      "surface": 42.13,
+      "price": 250000,
+      "price/m2": 7739,
+      "rooms": 3,
+      "link": "https://www.otodom.pl",
+      "tel": "509 758 003",
+      "category": "na sprzedaż"
+    },
+    {
+      "id": 3,
+      "date": "2017-11-11",
+      "title": "Sprzedam mieszkanie dwupokojowe: Katowice Józefowiec, ulica -, 70 m2, 363376 PLN, 2 pokoje",
+      "location": "Katowice",
+      "surface": 70.00,
+      "price": 363376,
+      "price/m2": 7739,
+      "rooms": 3,
+      "link": "https://www.otodom.pl",
+      "tel": "509 758 003",
+      "category": "na sprzedaż"
+    },
+    {
+      "id": 4,
+      "date": "2017-11-15",
+      "title": "Mieszkanie Katowice Bogucice, ul. Bogucice (Katowice, Bogucice, śląskie)",
+      "location": "Katowice",
+      "surface": 75.00,
+      "price": 130000,
+      "price/m2": 7739,
+      "rooms": 3,
+      "link": "https://www.otodom.pl",
+      "tel": "509 758 003",
+      "category": "na sprzedaż"
+    },
+    {
+      "id": 5,
+      "date": "2017-11-12",
+      "title": "Mieszkanie Katowice Brynów (Katowice, Brynów, śląskie)",
+      "location": "Katowice",
+      "surface": 75.00,
+      "price": 579000,
+      "price/m2": 7739,
+      "rooms": 3,
+      "link": "https://www.otodom.pl",
+      "tel": "509 758 003",
+      "category": "na sprzedaż"
+    },
+    {
+      "id": 6,
+      "date": "2017-11-11",
+      "title": "Kawalerka Na Ostatnim Piętrze! panoramiczne okna, Katowice, Kostuchna",
+      "location": "Katowice",
+      "surface": 28.00,
+      "price": 95000,
+      "price/m2": 7739,
+      "rooms": 1,
+      "link": "https://www.otodom.pl",
+      "tel": "509 758 003",
+      "category": "na wynajem"
+    }
+  ]
+}
