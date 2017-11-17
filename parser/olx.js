@@ -1,8 +1,4 @@
-// const request = require('request');
-// request.post("https://www.olx.pl/ajax/search/list/", {},function(error, response, body){
-//     console.log(body);
-// });
-
+const request = require('request');
 const htmlToJson = require('html-to-json');
 
 
@@ -24,7 +20,9 @@ function getOfferDetails(link){
 
     let condoInfo = htmlToJson.request(link, {
         'condoInfoTitle': ['.offer-titlebox  h1', function($title) {
-            return $title.text().trim();
+
+                return $title.text().trim();
+
         }],
 
         'condoInfoPrice': ['.price-label strong.xxxx-large.not-arranged', function ($price) {
@@ -41,57 +39,48 @@ function getOfferDetails(link){
             return $surface.text().trim();
         }],
 
-        // 'condoInfoLocation': ['a.show-map-link strong', function($location) {
-        //     console.log('REQUEST');
-        //     return $location.text();
-        // }],
+        'condoInfoRooms': ['table.details.fixed.full  tr:nth-child(4) > td:nth-of-type(2)  tr:first-of-type  td.value:nth-of-type(1) strong', function($rooms) {
 
+            return $rooms.text().trim();
+        }],
 
+        'condoInfoTel': ['.contact-button.link-phone.atClickTracking.js-show-phone-number.activated strong.xx-large', function($tel) {
 
-
-        // condos: htmlToJson.createMethod(['.offer-titlebox', {
-        //     'title': function ($title) {
-        //         console.log('CREATEMETHOD')
-        //         return $title.find('h1').text();
-        //     },
-        //     'location': function ($location) {
-        //         return $location.find('a.show-map-link strong').text();
-        //     }
-        // }]),
+            return $tel.text().trim();
+        }],
 
 
     }, function (err, result) {
-        console.log(result);
-    });
+        // console.log(result);
+            if(result.condoInfoTitle.length > 0) {
 
+
+                let newCondo = {
+
+                    // "date": "2017-11-15",
+                    title: result.condoInfoTitle[0],
+                    location: result.condoInfoLocation[0],
+                    surface: result.condoInfoSurface[0],
+                    price: result.condoInfoPrice[0],
+                    // "price/m2": 7739,
+                    rooms: result.condoInfoRooms[0],
+                    // "link": "https://www.otodom.pl",??????????
+                    tel: result.condoInfoTel[0]
+                    // "category": "na sprzedaż"
+                }
+                // console.log(newCondo);
+                request.post('http://localhost:3000/condos', {
+                    form:	newCondo
+                },(err, response, body) => {
+
+                });
+
+            }
+
+
+    });
 }
 
 
 
-//      "id": 3,
-//     "date": "2017-11-11",
-//     "title": "Sprzedam mieszkanie dwupokojowe: Katowice Józefowiec, ulica -, 70 m2, 363376 PLN, 2 pokoje",
-//     "location": "Katowice",
-//     "surface": 70.00,
-//     "price": 363376,
-//     "price/m2": 7739,
-//     "rooms": 3,
-//     "link": "https://www.otodom.pl",
-//     "tel": "509 758 003",
-//     "category": "na sprzedaż"
 
-    // "city": ?????????
-
-    // "id": ,
-    // "date": "",
-    // "title": "",
-    // "location": "",
-    // "category": ""
-    // "price": ,
-    // "price/m2": ------ ,
-
-
-    // "rooms": ,
-    // "link": "",
-    // "tel": "",
-    // "surface": ,

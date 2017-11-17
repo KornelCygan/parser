@@ -17,6 +17,24 @@ turquoise:#40e0d0
   > section{
     width: 100vw;
     margin: 0 auto;
-    border: 1px solid darkblue;
+
+  }
+  .search{
+    min-height: 50px;
+
+  }
+
+  table{
+    table-layout: fixed;
+    border-collapse: collapse;
+    padding: 15px;
+    width:100%;
+
+    tr {
+      padding: 15px;
+      &:nth-of-type(2n+1) {
+        background-color: rgba(31, 130, 119, 0.3);
+      }
+    }
   }
 }

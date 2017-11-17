@@ -32,6 +32,13 @@ class CondosTable extends React.Component{
                             .filter( condo =>condo.category == 'na wynajem')
                             .map( rentCondo => <CondoRow condo={rentCondo} key={rentCondo.id} />)
                     }
+
+
+                    {
+                        this.props.condos
+                            .filter( condo => !condo.category)
+                            .map( rentCondo => <CondoRow condo={rentCondo} key={rentCondo.id} />)
+                    }
                 </tbody>
             </table>
 

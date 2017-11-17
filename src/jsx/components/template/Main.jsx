@@ -31,13 +31,33 @@ class Main extends React.Component{
     }
 
     handleFilterCategory = (event) => {
+
+        // let changed = () => {
+        //     let toChange = event.target.value.toLowerCase()
+        //     let changingParam;
+        //         changingParam = toChange.replace(/ę/ig,'e');
+        //         changingParam = toChange.replace(/ż/ig,'z');
+        //         changingParam = toChange.replace(/ó/ig,'o');
+        //         changingParam = toChange.replace(/ł/ig,'l');
+        //         changingParam = toChange.replace(/ć/ig,'c');
+        //         changingParam = toChange.replace(/ś/ig,'s');
+        //         changingParam = toChange.replace(/ź/ig,'z');
+        //         changingParam = toChange.replace(/ń/ig,'n');
+        //         changingParam = toChange.replace(/ą/ig,'a');
+        //     return changingParam
+        // }
+
+
         this.state.filters.category = event.target.value;
 
         this.setState( {
             filters: this.state.filters,
             reloadData: true
         });
+        console.log(changed())
     }
+
+
 
     handleFilterPriceGte = (event) => {
         this.state.filters.price_gte = (event.target.value.length) ? parseInt(event.target.value) : false;
@@ -71,9 +91,12 @@ class Main extends React.Component{
         return filters;
     }
 
+
+
     componentDidMount(){
 
         CondosData.loadAll( this.prepareFilters() , (condos) => {
+            // console.log(condos);
             this.setState({ condos });
         })
     }

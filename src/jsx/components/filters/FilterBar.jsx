@@ -4,7 +4,7 @@ class FilterBar extends React.Component{
 
     render(){
         return (
-            <section>
+            <section className="search">
                 <input type="text" placeholder="Miasto" onChange={this.props.updateSearchQuery}/>
                 <select onChange={this.props.updateCategory} >
                     <option value="">dowolne</option>
