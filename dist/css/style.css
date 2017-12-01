@@ -14,6 +14,18 @@
   border: 2px solid #40e0d0; }
 
 #app > section {
-  width: 300px;
-  margin: 0 auto;
-  border: 1px solid darkblue; }
+  width: 100vw;
+  margin: 0 auto; }
+
+#app .search {
+  min-height: 50px; }
+
+#app table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  padding: 15px;
+  width: 100%; }
+  #app table tr {
+    padding: 15px; }
+    #app table tr:nth-of-type(2n+1) {
+      background-color: rgba(31, 130, 119, 0.3); }
