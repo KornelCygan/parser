@@ -1,19 +1,40 @@
 import React from 'react';
 
 class SearchCity extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            city: ''
+        }
+    }
+
 
 
     handleSearchingValue = (e) => {
-        console.log( e.target.value );
+        this.setState({
+            city: e.target.value,
+        });
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(this.state.city);
+
+        this.setState({
+            city: ''
+        })
     }
 
 
     render(){
+
         return (
 
-            <form onSubmit = {this.handleSearchingValue}>
+            <form onSubmit = {this.handleSubmit}>
                 <h2>Wpisz miasto w którym szukasz mieszkania</h2>
-                <input type = 'text' />
+                <input type = 'text' onChange={this.handleSearchingValue} value={this.state.city}/>
                 <button type = 'submit'>Szukaj</button>
             </form>
 
